@@ -1,6 +1,3 @@
-import "es-expand"
-
-
 
 
 /**
@@ -14,7 +11,7 @@ import "es-expand"
  * - 方法能用于判断对象的内容是否相等，相等的条件是：这2个对象拥有相同的属性 和 属性值，且属性及属性的属性 的添加顺序是一致的；即：当两个对象的拥有相同的属性和属性值时，如果属性的定义的顺序不同，该方法会返回 false；
  * - 该方法依赖于 JSON.stringify() 的逻辑；
  */
-export function isEqualOfJSON(value1:any, value2:any):boolean;
+export function isEqualByJSON(value1:any, value2:any):boolean;
 
 
 
@@ -224,3 +221,62 @@ declare global {
  * @returns Promise   返回一个带有 resolve、reject 和 clearAdditions  三个方法的 Promise 实例，在该实例的 状态没有改变之前 ，通过 resolve 和 reject 这两个方法，可以改变 Promise 的状态，并且会自动调用 clearAdditions 方法来清除  resolve、reject、clearAdditions 这三个方法； clearAdditions 方法用来清除 resolve、reject 和 clearAdditions  这三个方法的
  */
 export function createControllablePromise<T>(executor?:(resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void,statusCompletesImmediately?:boolean): ControllablePromise<T>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 定义代理属性； 给 对象 proxy 增加 能够代理 target 对象 的 属性 prop；
+ * 当在 访问或配置 proxy 对象上的 prop 属性时，会将操作转发到 target 对象的 prop 属性；
+ *
+ * @param proxy : Object   必选；会在该对象上添加代理属性 prop
+ * @param target : Object   必选；被代理的对象
+ * @param prop : Property   必选；代理属性的名字；
+ * @param options ?: ProxyOptions  代理属性的配置选项
+ *
+ * ProxyOptions = {get:boolean,set:boolean,configurable:boolean,enumerable:boolean,getDefault,setDefault}
+ * get:boolean  可选；默认值：true； 表示是否要定义 get 的代理；
+ * set:boolean  可选；默认值：true； 表示是否要定义 set 的代理；
+ * configurable:boolean  可选；默认值：true； 表示该属性描述符的类型是否可以被改变并且该属性可以从对应对象中删除。
+ * enumerable:boolean  可选；默认值：true； 表示当在枚举相应对象上的属性时该属性是否显现。
+ * getDefault:any  可选；当 target 的属性 prop 为 undefined 时，proxy 会返回默认值 getDefault
+ * setDefault:any  可选；当给代理对象 proxy 的 prop 属性 设置的 新值是 undefined 时，会将默认值 setDefault 设置 到 target 对象的 prop 属性上；
+ *
+ * @returns proxy : Object  传递给函数的 代理对象 proxy
+ */
+
+export function defineProxyProperty(proxy: object, target: object, prop: string, options?: ProxyOptions): any;
+
+
+/**
+ *
+ * 接口1：defineProxyProperties(proxy,target,propArray,options)
+ * @param proxy : Object   必选；会在该对象上添加代理属性 prop
+ * @param target : Object   必选；被代理的对象
+ * @param propArray : [string]   必选；要定义的代理属性的名字的列表。
+ * @param options ?: ProxyOptions     可选；所有代理属性的配置选项
+ *
+ *  @returns proxy : Object  传递给函数的 代理对象 proxy
+ */
+export function defineProxyProperties(proxy: object, target: object, props: string[], options?: ProxyOptions): any;
+
+
+/**
+ * 批量定义代理属性
+ *
+ * 接口2：defineProxyProperties(proxy,target,propOptions)
+ * @param proxy : Object   必选；会在该对象上添加代理属性 prop
+ * @param target : Object   必选；被代理的对象
+ * @param propOptions : {propName:ProxyOptions}   必选；要定义的代理属性的配置对象；以该配置对象的属性名为 要配置的属性的名字，以其值为 本配置的属性的 配置选项
+ * @returns proxy : Object  传递给函数的 代理对象 proxy
+ */
+export function defineProxyProperties(proxy: object, target: object, propOptions: { [prop: string]: ProxyOptions }): any;
