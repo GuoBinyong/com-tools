@@ -4,6 +4,11 @@
  * @param code
  */
 export declare function betterEval(code: string): any;
+/**
+ * 拷贝构造函数，与 copyFunction 相比，该函数还会还原构造函数的继续链，即 prototype
+ * @param fun
+ */
+export declare function copyConstructor<F extends Function>(fun: F): F;
 export declare function copyFunction<F extends Function>(fun: F): F;
 /**
  * 根据函数字符串 和 函数名字 来创建函数

@@ -8,6 +8,16 @@ export function betterEval(code:string):any {
 }
 
 
+/**
+ * 拷贝构造函数，与 copyFunction 相比，该函数还会还原构造函数的继续链，即 prototype
+ * @param fun
+ */
+export function copyConstructor<F extends Function>(fun:F):F {
+    const funCopy = copyFunction(fun);
+    funCopy.prototype = Object.create(fun.prototype);
+    funCopy.prototype.constructor = funCopy;
+    return funCopy;
+}
 
 
 
