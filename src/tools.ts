@@ -35,8 +35,15 @@ export function copyFunction<F extends Function>(fun:F):F {
 
 
 
-// 函数名字的正则表达式
-const funNameRegExpOfFunString = /(?<=^\s*function\s+)[A-Za-z_$]+[\w$]*(?=\s*\()/;
+/*
+函数名字的正则表达式
+注意：
+2020年6月17日测试：IOS 和 Mac 的 Safari 不支持 后行断言 `(?<=)` 和 `(?<!)`
+
+为了保证兼容性，先后行都不用
+*/
+// const funNameRegExpOfFunString = /(?<=^\s*function\s+)[A-Za-z_$]+[\w$]*(?=\s*\()/;   // 函数名字正则-后行断言版
+const funNameRegExpOfFunString = /(^\s*function\s+)[A-Za-z_$]+[\w$]*(\s*\()/;       // 函数名字正则-没有断言版
 // JavaScript 的标识符 正则
 const jsIdentifier = /^[A-Za-z_$]+[\w$]*$/;
 
@@ -57,7 +64,8 @@ export function createFunctionBy(funString:string,name?:string,asDefault?:boolea
     const isValidName = name && funNameReg.test(name)
 
     if (hasName && isValidName && !asDefault){
-        funString = funString.replace(funNameRegOfFunString,name as string);
+        // funString = funString.replace(funNameRegOfFunString,name as string);  // 函数名字正则-后行断言版
+        funString = funString.replace(funNameRegOfFunString,`$1${name}$2`);   // 函数名字正则-没有断言版
     }
 
 
