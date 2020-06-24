@@ -1,4 +1,13 @@
 
+export declare type ProxyOptions = {
+  get?: boolean,
+  set?: boolean,
+  configurable?: boolean,
+  enumerable?: boolean,
+  getDefault?: any,
+  setDefault?: any
+};
+
 
 /**
  * 通过把值转换成JSON字符来判断是否相等
@@ -126,7 +135,7 @@ export function safelyIterate<T,ThisValue>(iterable:Iterable<T>,operation:(this:
  */
 
 
- type ListenablePropOpts<T> = {
+declare type ListenablePropOpts<T> = {
     ready ?:string,
     noEvent ?:boolean,
     event ?:string,
