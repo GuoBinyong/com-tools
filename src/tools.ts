@@ -42,8 +42,8 @@ export function copyFunction<F extends Function>(fun:F):F {
 
 为了保证兼容性，先后行都不用
 */
-// const funNameRegExpOfFunString = /(?<=^\s*function\s+)[A-Za-z_$]+[\w$]*(?=\s*\()/;   // 函数名字正则-后行断言版
-const funNameRegExpOfFunString = /(^\s*function\s+)[A-Za-z_$]+[\w$]*(\s*\()/;       // 函数名字正则-没有断言版
+// const funNameRegExpOfFunString = /(?<=^\s*(async\s+)?function\s*(\s|\*)\s*)[A-Za-z_$]+[\w$]*(?=\s*\()/;   // 函数名字正则-后行断言版
+const funNameRegExpOfFunString = /(^\s*(async\s+)?function\s*(\s|\*)\s*)[A-Za-z_$]+[\w$]*(\s*\()/;       // 函数名字正则-没有断言版
 // JavaScript 的标识符 正则
 const jsIdentifier = /^[A-Za-z_$]+[\w$]*$/;
 
@@ -65,7 +65,7 @@ export function createFunctionBy(funString:string,name?:string,asDefault?:boolea
 
     if (hasName && isValidName && !asDefault){
         // funString = funString.replace(funNameRegOfFunString,name as string);  // 函数名字正则-后行断言版
-        funString = funString.replace(funNameRegOfFunString,`$1${name}$2`);   // 函数名字正则-没有断言版
+        funString = funString.replace(funNameRegOfFunString,`$1${name}$4`);   // 函数名字正则-没有断言版
     }
 
 
