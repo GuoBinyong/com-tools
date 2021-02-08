@@ -14,7 +14,10 @@
  */
 export class Decide<V = any> {
     //决议状态，表示是否决议
-    decided = false;
+    protected _decided = false;
+    get decided(){
+        return this._decided
+    }
 
     //存储监听器的数组
     listeners:((copy:V)=>void)[] = [];
@@ -34,7 +37,8 @@ export class Decide<V = any> {
      * 执行回调，并且为了提高性能，会让决议之后的 then 方法直接执行回调
      */
     protected resolve(){
-        let value = this.value;
+        this._decided = true;
+        const value = this.value;
         for (const cb of this.listeners){
             cb(value);
         }
@@ -53,6 +57,16 @@ export class Decide<V = any> {
      */
     then(cb:(val:V)=>void){
         this.listeners.push(cb);
+    }
+
+    /**
+     * 创建一个直接决议的 Decide，并且决议的值是 value
+     * @param value 
+     */
+    static resolve<V>(value:V):Decide<V>{
+        const decide = new this();
+        decide.value = value;
+        return decide;
     }
 }
 

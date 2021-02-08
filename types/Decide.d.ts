@@ -12,7 +12,8 @@
  * - 即使决议之后，你也可以更改 value 的值，但不会再触发之添加的事件监听器；
  */
 export declare class Decide<V = any> {
-    decided: boolean;
+    protected _decided: boolean;
+    get decided(): boolean;
     listeners: ((copy: V) => void)[];
     protected _value: V;
     get value(): V;
@@ -26,4 +27,9 @@ export declare class Decide<V = any> {
      * @param cb
      */
     then(cb: (val: V) => void): void;
+    /**
+     * 创建一个直接决议的 Decide，并且决议的值是 value
+     * @param value
+     */
+    static resolve<V>(value: V): Decide<V>;
 }
