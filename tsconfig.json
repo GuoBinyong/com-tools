@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "ESNext",
     "lib": [
       "DOM",
-      "DOM.Iterable",
-      "ESNext",
-      "ScriptHost"
+      "ESNext"
     ],
     "declaration": true,
     "downlevelIteration": true,
