@@ -2,23 +2,15 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
-    "downlevelIteration": true,
-    "rootDirs": [
-      "src",
-      "types"
-    ],
     "strict": true,
-    "moduleResolution": "node",
-    "resolveJsonModule":true,
-    "esModuleInterop": true
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+    "noImplicitOverride":true,
   },
-  "exclude": [
-    "dist",
-    "dev"
-  ]
+  "include": ["src"]
 }
