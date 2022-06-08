@@ -1,0 +1,1980 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.25.0",
+    "schemaVersion": 1006,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "com-tools!",
+  "docComment": "",
+  "name": "com-tools",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "com-tools!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!betterEval:function(1)",
+          "docComment": "/**\n * 由于 eval() 有 安全 和 性能 的问题，所以封装了本函数 来 替代 eval() 本方法采用 Function 的方式 来实现 eval() 的效果；\n *\n * @param code - \n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function betterEval(code: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "code",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "betterEval"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!copyConstructor:function(1)",
+          "docComment": "/**\n * 拷贝构造函数，与 copyFunction 相比，该函数还会还原构造函数的继续链，即 prototype\n *\n * @param fun - \n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function copyConstructor<F extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Function",
+              "canonicalReference": "!Function:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">(fun: "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "fun",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "F",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "copyConstructor"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!copyFunction:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function copyFunction<F extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Function",
+              "canonicalReference": "!Function:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">(fun: "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "fun",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "F",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "copyFunction"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!createControllablePromise:function(1)",
+          "docComment": "/**\n * createControllablePromise(executor ?:(resolve, reject)=>Void) 创建外部可控制的改变 Promise 状态 Status 的 Promise 对象；该 Promise 对象在 状态 未完成之前，会 resolve、reject、clearAdditions 三个方法，当 Promise 的状态完成时，resolve、reject、clearAdditions 这三个方法会自动被删除；其中 clearAdditions 方法是用来 清除 该实例的 resolve、reject、clearAdditions 这三个方法的；\n *\n * @param executor - ?: (resolve, reject)=>Void 可选；executor是带有 resolve 和 reject 两个参数的函数 。Promise构造函数执行时立即调用executor 函数，\n *\n * @param statusCompletesImmediately - ?: boolean 可选；默认值：true； 该参数表示在 executor 函数中是否会立即（同步）调用 resolve 或 reject ；如果是，则会把 executor 函数变成异步执行，以来避免在执行 clearAdditions 时引用 还未创建的 真实的 promise 实例；\n *\n * @returns Promise 返回一个带有 resolve、reject 和 clearAdditions 三个方法的 Promise 实例，在该实例的 状态没有改变之前 ，通过 resolve 和 reject 这两个方法，可以改变 Promise 的状态，并且会自动调用 clearAdditions 方法来清除 resolve、reject、clearAdditions 这三个方法； clearAdditions 方法用来清除 resolve、reject 和 clearAdditions 这三个方法的\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function createControllablePromise<T>(executor?:"
+            },
+            {
+              "kind": "Content",
+              "text": "(resolve: (value?: T | "
+            },
+            {
+              "kind": "Reference",
+              "text": "PromiseLike",
+              "canonicalReference": "!PromiseLike:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>) => void, reject: (reason?: any) => void) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ",statusCompletesImmediately?:"
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ControllablePromise",
+              "canonicalReference": "com-tools!~__global~ControllablePromise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "executor",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "statusCompletesImmediately",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "createControllablePromise"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!createFunctionBy:function(1)",
+          "docComment": "/**\n * 根据函数字符串 和 函数名字 来创建函数\n *\n * @param funString - :string 必选； 函数的代码字符串，必须是完整的函数代码字符串，不能是函数体的代码片断，可通过函数的 toString() 方法获得；\n *\n * @param name - ?:string 可选； 函数的名字；\n *\n * @param asDefault - ?:boolean 可选；name 参数是否作为函数名字的默认值（当 funString 中不包含函数名字时，再使用 name 作为函数的名字）\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function createFunctionBy(funString: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", name?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", asDefault?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Function",
+              "canonicalReference": "!Function:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "funString",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "name",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "asDefault",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createFunctionBy"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!createSingleton:function(1)",
+          "docComment": "/**\n * 为指定的函数 fun 创建对应的 单例函数\n *\n * @param fun - : Function 普通函数 或者 构造函数  @return Function 增加了单例机制的函数；该函数的使用方式 和 原函数 fun 一样，只是无论多少次调用该函数，该函数都会返回原函数 fun 的同一实例\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function createSingleton<Fun extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Function",
+              "canonicalReference": "!Function:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">(fun: "
+            },
+            {
+              "kind": "Content",
+              "text": "Fun"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "Fun"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "fun",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "Fun",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "createSingleton"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!createUniqueIdentifier:function(1)",
+          "docComment": "/**\n * 生成唯一的标识符\n *\n * @returns {string}\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function createUniqueIdentifier():"
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "createUniqueIdentifier"
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "com-tools!Decide:class",
+          "docComment": "/**\n * 决议 用来监听决议的值； 当 决议时，会自动回调所有注册的事件，并回传决议的值；决议之后，再进行监听，监听事件会被立即被回调，并传递决议的值；\n *\n * 说明： 功能类似 Promise，也可用 Promise 来更轻松地实现，但之所以不用 Promise ，是因为 Promise 的回调是异步的，但我想同步回调，即让回调在一个运行循环内完成； 与 Promise 的区别是： - then回调是在 决议时 和 决议之后 同步执行的；并会回传最新的 this.value - 简单、轻量 - 通过给 Decide 实例的 value 属性设置值 `decide.value = newValue` 自动触发决议； - 即使决议之后，你也可以更改 value 的值，但不会再触发之添加的事件监听器；\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class Decide<V = "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "V",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "Decide",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "com-tools!Decide#_decided:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected _decided: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "_decided",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": true
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "com-tools!Decide#_value:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected _value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "V"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "_value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": true
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "com-tools!Decide#decided:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get decided(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "decided",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "com-tools!Decide#listeners:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listeners: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "((copy: V) => void)[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "listeners",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "com-tools!Decide#resolve:member(1)",
+              "docComment": "/**\n * 执行回调，并且为了提高性能，会让决议之后的 then 方法直接执行回调\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected resolve(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "isProtected": true,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "name": "resolve"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "com-tools!Decide.resolve:member(1)",
+              "docComment": "/**\n * 创建一个直接决议的 Decide，并且决议的值是 value\n *\n * @param value - \n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static resolve<V>(value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "V"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Decide",
+                  "canonicalReference": "com-tools!Decide:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<V>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "V",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "resolve"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "com-tools!Decide#then:member(1)",
+              "docComment": "/**\n * 监听决议，当被决议后，会自动回调 cb，并回传最新的 this.value\n *\n * @param cb - \n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "then(cb: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(val: V) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "cb",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "name": "then"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "com-tools!Decide#value:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get value(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "V"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                },
+                {
+                  "kind": "Content",
+                  "text": "\n\nset value(newVal: V);"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineListenableProperties:function(1)",
+          "docComment": "/**\n * 接口1：defineListenableProperties(obj,propsOptions)\n *\n * @param obj - : Object 必选；要在其上定义属性的对象。\n *\n * @param propsOptions - : {propName:options} 必选；要定义的属性的配置对象；以该配置对象的属性属性为 要配置的属性的名字，以其值为 本配置的属性的 配置选项\n *\n * @returns obj : Object 被传递给函数的对象。\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineListenableProperties<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj:"
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ",propsOptions:"
+            },
+            {
+              "kind": "Content",
+              "text": "{[prop:string]:"
+            },
+            {
+              "kind": "Reference",
+              "text": "ListenablePropOpts",
+              "canonicalReference": "com-tools!ListenablePropOpts:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>}"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "propsOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "defineListenableProperties"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineListenableProperties:function(2)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineListenableProperties<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj:"
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ",propArray:"
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": ",options?:"
+            },
+            {
+              "kind": "Reference",
+              "text": "ListenablePropOpts",
+              "canonicalReference": "com-tools!ListenablePropOpts:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 11
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 2,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "propArray",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "defineListenableProperties"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineListenableProperty:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineListenableProperty<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj:"
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ",prop:"
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ",options?:"
+            },
+            {
+              "kind": "Reference",
+              "text": "ListenablePropOpts",
+              "canonicalReference": "com-tools!ListenablePropOpts:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 11
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "prop",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "defineListenableProperty"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineListenablePropertyGetter:function(1)",
+          "docComment": "/**\n * defineListenablePropertyGetter(obj, prop, getDefault, asGetter) 定义可监听属性的 getter ； 该方法一般经常用于：一些可监听属性在被定义时，还不能定义 getDefault 选项，只能在稍后某个时刻定义 getDefault 选项，此时便可用此函数来简化重新定义 getter 的操作；\n *\n * @param obj - : Object 必选；要在其上定义属性的对象。\n *\n * @param prop - : string 必选；要定义的属性的名称。\n *\n * @param getDefault - ?:(thisValue)=>PropValue 可选；在获取 prop 属性的值时，如果 prop 属性的值不存在 ，则会通过 该函数获取默认的值；\n *\n * @param asGetter - ?: boolean 可选；是否将 getDefault 作为 getter\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineListenablePropertyGetter<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj:"
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ", prop:"
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", getDefault?:"
+            },
+            {
+              "kind": "Content",
+              "text": "(this:T,thisValue:T)=>any"
+            },
+            {
+              "kind": "Content",
+              "text": ", asGetter?:"
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "prop",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "getDefault",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "asGetter",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "defineListenablePropertyGetter"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineProxyProperties:function(1)",
+          "docComment": "/**\n * 接口1：defineProxyProperties(proxy,target,propArray,options)\n *\n * @param proxy - : Object 必选；会在该对象上添加代理属性 prop\n *\n * @param target - : Object 必选；被代理的对象\n *\n * @param propArray - : [string] 必选；要定义的代理属性的名字的列表。\n *\n * @param options - ?: ProxyOptions 可选；所有代理属性的配置选项\n *\n * @returns proxy : Object 传递给函数的 代理对象 proxy\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineProxyProperties(proxy: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", target: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", props: "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ProxyOptions",
+              "canonicalReference": "com-tools!ProxyOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "proxy",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "defineProxyProperties"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineProxyProperties:function(2)",
+          "docComment": "/**\n * 批量定义代理属性\n *\n * 接口2：defineProxyProperties(proxy,target,propOptions)\n *\n * @param proxy - : Object 必选；会在该对象上添加代理属性 prop\n *\n * @param target - : Object 必选；被代理的对象\n *\n * @param propOptions - : {propName:ProxyOptions} 必选；要定义的代理属性的配置对象；以该配置对象的属性名为 要配置的属性的名字，以其值为 本配置的属性的 配置选项\n *\n * @returns proxy : Object 传递给函数的 代理对象 proxy\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineProxyProperties(proxy: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", target: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", propOptions: "
+            },
+            {
+              "kind": "Content",
+              "text": "{ [prop: string]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ProxyOptions",
+              "canonicalReference": "com-tools!ProxyOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": " }"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 2,
+          "parameters": [
+            {
+              "parameterName": "proxy",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "propOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "defineProxyProperties"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!defineProxyProperty:function(1)",
+          "docComment": "/**\n * 定义代理属性； 给 对象 proxy 增加 能够代理 target 对象 的 属性 prop； 当在 访问或配置 proxy 对象上的 prop 属性时，会将操作转发到 target 对象的 prop 属性；\n *\n * @param proxy - : Object 必选；会在该对象上添加代理属性 prop\n *\n * @param target - : Object 必选；被代理的对象\n *\n * @param prop - : Property 必选；代理属性的名字；\n *\n * @param options - ?: ProxyOptions 代理属性的配置选项\n *\n * ProxyOptions = {get:boolean,set:boolean,configurable:boolean,enumerable:boolean,getDefault,setDefault} get:boolean 可选；默认值：true； 表示是否要定义 get 的代理； set:boolean 可选；默认值：true； 表示是否要定义 set 的代理； configurable:boolean 可选；默认值：true； 表示该属性描述符的类型是否可以被改变并且该属性可以从对应对象中删除。 enumerable:boolean 可选；默认值：true； 表示当在枚举相应对象上的属性时该属性是否显现。 getDefault:any 可选；当 target 的属性 prop 为 undefined 时，proxy 会返回默认值 getDefault setDefault:any 可选；当给代理对象 proxy 的 prop 属性 设置的 新值是 undefined 时，会将默认值 setDefault 设置 到 target 对象的 prop 属性上；\n *\n * @returns proxy : Object 传递给函数的 代理对象 proxy\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function defineProxyProperty(proxy: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", target: "
+            },
+            {
+              "kind": "Content",
+              "text": "object"
+            },
+            {
+              "kind": "Content",
+              "text": ", prop: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ProxyOptions",
+              "canonicalReference": "com-tools!ProxyOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "proxy",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "prop",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "defineProxyProperty"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!isEqualByJSON:function(1)",
+          "docComment": "/**\n * 通过把值转换成JSON字符来判断是否相等\n *\n * @param value1 - : any\n *\n * @param value2 - : any\n *\n * @returns boolean\n *\n * 注意： - 方法能用于判断对象的内容是否相等，相等的条件是：这2个对象拥有相同的属性 和 属性值，且属性及属性的属性 的添加顺序是一致的；即：当两个对象的拥有相同的属性和属性值时，如果属性的定义的顺序不同，该方法会返回 false； - 该方法依赖于 JSON.stringify() 的逻辑；\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function isEqualByJSON(value1:"
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ", value2:"
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value1",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "value2",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isEqualByJSON"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "com-tools!ListenablePropOpts:type",
+          "docComment": "/**\n * 定义可监听的属性\n *\n * @param obj - : Object 必选；要在其上定义属性的对象。\n *\n * @param prop - : string 必选；要定义的属性的名称。\n *\n * @param options - ?: {ready ?:string,noEvent ?:boolean,event ?:string,newValueKey ?:string,oldValueKey ?:string,getDefault ?:(thisValue)=>PropValue} 可选；配置选项；各个选项的说明如下；  @property ready ?:string 可选；默认值：prop + \"Ready\" ；ready属性的属性名字；  @property noEvent ?:boolean 可选；默认值：false ；是否要给 prop 属性增加值变更事件；  @property event ?:string 可选；默认值：prop + \"Change\" ；prop变更事件的名字；  @property newValueKey ?:string 可选；默认值：\"value\" ；prop变更事件的事件对象中保存新值的属性名字；  @property oldValueKey ?:string 可选；默认值：\"oldValue\" ；prop变更事件的事件对象中保存旧值的属性名字；  @property getDefault ?:(thisValue)=>PropValue 可选；在获取 prop 属性的值时，如果 prop 属性的值不存在 ，则会通过 该函数获取默认的值；\n *\n * @returns obj : Object 被传递给函数的对象。\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare type ListenablePropOpts<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    ready ?:string,\n    noEvent ?:boolean,\n    event ?:string,\n    newValueKey ?:string,\n    oldValueKey ?:string,\n    getDefault ?:(this:T,thisValue:T)=>any\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ListenablePropOpts",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!mixin:function(5)",
+          "docComment": "/**\n * 混合\n *\n * @remarks\n *\n * 将 source 的所有成员混入 target 对象中。\n *\n * 与 `Object.assign()` 的功能类似，不同的是 `mixin()` 会在 target 对象中 保持 source 对象属性的 PropertyDescriptors\n *\n * @param target - 目标对象，所有 源对象 的属性都要被混入进到 目标对象中\n *\n * @param sources - 源对象，所有 源对象 的属性都要被混入进到 目标对象中\n *\n * @returns 混入后的 target\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function mixin(target: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ", ...sources: "
+            },
+            {
+              "kind": "Content",
+              "text": "any[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 5,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "sources",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "mixin"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!multipleLoop:function(1)",
+          "docComment": "/**\n * multipleLoop(option)=> stopLoop() 多次遍历、分批循环；可以把一个大遍历分成若干个小遍历来完成；\n *\n * @param option - : {loopCall,complete,stepComplete,thisValue,total,step,delay} 选项对象  @property option.loopCall : (index,stepCount,total)=>stopInfo : any 必选；每次循环的回调函数；入参 index : number 表示当前循环的 index，从0开始；入参 stepCount : number 表示已经遍历的批数、周期数；入参 total: number 循环的总数； 返回 stopInfo : any 停止循环并返回停止相关的信息；  @property option.stepComplete ？ : (index,stepCount,total)=>stopInfo : any 可选；每批循环完成时的回调函数；入参 index : number 表示当前循环的 index，从0开始；入参 stepCount : number 表示已经遍历的批数、周期数；入参 total: number 循环的总数； 返回 stopInfo : any 停止循环并返回停止相关的信息；  @property option.complete ？: (stopInfo,index,stepCount,total)=>Void 可选；循环结束时的回调函数； 入参 stopInfo : any 停止循环遍历时停止信息；入参 index : number 表示最后一次循环的 index，如果值为-1 表示没有进行过循环值终止了；入参 stepCount : number 表示已经遍历的批数、周期数；入参 total: number 循环的总数；  @property option.thisValue ? : any loopCall、complete、stepComplete 回调函数的this的值；  @property option.total ? : number 可选；默认值：无穷大 Number.POSITIVE_INFINITY ; 设置总数循环次数；  @property option.step ? : number 可选； 默认值： 50 ； 设置每次遍历的循环次数；  @property option.delay ? : Timestamp 可选；默认值 ：0 ； 设置再次遍历的间隔时间；\n *\n * @returns stopLoop : (stopInfo)=>Void 停止循环的函数；调用该函数，会终止正在进行的循环； 入参 stopInfo : any 停止循环的相关信息\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function multipleLoop<StopInfo,ThisValue>(mLoopOpts:"
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    loopCall:(this:ThisValue,index:number,stepCount:number,total:number)=>StopInfo,\n    complete ?: (this:ThisValue,stopInfo:StopInfo,index:number,stepCount:number,total:number)=>void,\n    stepComplete ?: (this:ThisValue,index:number,stepCount:number,total:number)=>StopInfo,\n    thisValue?:ThisValue,\n    total?:number,\n    step?:number,\n    delay?:number\n}"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "(stopInfo?:StopInfo)=>void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "mLoopOpts",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "StopInfo",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ThisValue",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "multipleLoop"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "com-tools!ProxyOptions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ProxyOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n  get?: boolean,\n  set?: boolean,\n  configurable?: boolean,\n  enumerable?: boolean,\n  getDefault?: any,\n  setDefault?: any\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ProxyOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "com-tools!safelyIterate:function(1)",
+          "docComment": "/**\n * safelyIterate(iterable,operation, thisValue) 对 iterable 进行安全的迭代；与 for...of 的区别是：safelyIterate 能保证会迭代过程不会受 operation 中的行为的影响从而迭代每一个元素；\n *\n * @param iterable - : Iterable 必选； 可迭代的对象；\n *\n * @param operation - : (currentValue,currentIndex,iterable)=>boolean | undefined 执行的操作， 该函数的返回值表示是否要过滤出该元素\n *\n * @param thisValue - ? : any 可选，默认值是 iterable ；操作 operation 的 this 值\n *\n * @param currentValue - : any 调用 operation 时的元素的值；\n *\n * @param currentIndex - : number currentValue 在原始 iterable 中 对应的迭代索引值；\n *\n * @param iterable - : Iterable 被迭代的 iterable ；\n *\n * @returns boolean | undefined 表示是否要过滤出 currentValue ；\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export function safelyIterate<T,ThisValue>(iterable:"
+            },
+            {
+              "kind": "Reference",
+              "text": "Iterable",
+              "canonicalReference": "!Iterable:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ",operation:"
+            },
+            {
+              "kind": "Content",
+              "text": "(this:ThisValue,currentValue:T,currentIndex:number,iterable:"
+            },
+            {
+              "kind": "Reference",
+              "text": "Iterable",
+              "canonicalReference": "!Iterable:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>)=>any"
+            },
+            {
+              "kind": "Content",
+              "text": ", thisValue?:"
+            },
+            {
+              "kind": "Content",
+              "text": "ThisValue"
+            },
+            {
+              "kind": "Content",
+              "text": "):"
+            },
+            {
+              "kind": "Content",
+              "text": "T[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 11
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "iterable",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "operation",
+              "parameterTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 7
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "thisValue",
+              "parameterTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 9
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ThisValue",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "safelyIterate"
+        }
+      ]
+    }
+  ]
+}
