@@ -29,7 +29,6 @@
 |  [defineProxyProperties(proxy, target, propOptions)](./com-tools.defineproxyproperties_1.md) | 批量定义代理属性<!-- -->接口2：defineProxyProperties(proxy,target,propOptions) |
 |  [defineProxyProperty(proxy, target, prop, options)](./com-tools.defineproxyproperty.md) | 定义代理属性； 给 对象 proxy 增加 能够代理 target 对象 的 属性 prop； 当在 访问或配置 proxy 对象上的 prop 属性时，会将操作转发到 target 对象的 prop 属性； |
 |  [isEqualByJSON(value1, value2)](./com-tools.isequalbyjson.md) | 通过把值转换成JSON字符来判断是否相等 |
-|  [mixin(target, sources)](./com-tools.mixin_4.md) | 混合 |
 |  [multipleLoop(mLoopOpts)](./com-tools.multipleloop.md) | multipleLoop(option)=<!-- -->&gt; stopLoop() 多次遍历、分批循环；可以把一个大遍历分成若干个小遍历来完成； |
 |  [safelyIterate(iterable, operation, thisValue)](./com-tools.safelyiterate.md) | safelyIterate(iterable,operation, thisValue) 对 iterable 进行安全的迭代；与 for...of 的区别是：safelyIterate 能保证会迭代过程不会受 operation 中的行为的影响从而迭代每一个元素； |
 

@@ -77,23 +77,6 @@ export type ListenablePropOpts<T> = {
     getDefault ?:(this:T,thisValue:T)=>any
 };
 
-// Warning: (ae-internal-mixed-release-tag) Mixed release tags are not allowed for "mixin" because one of its declarations is marked as @internal
-//
-// @internal
-export function mixin<T, S>(target: T, source: S): T & S;
-
-// @internal
-export function mixin<T, S1, S2>(target: T, source1: S1, source2: S2): T & S1 & S2;
-
-// @internal
-export function mixin<T, S1, S2, S3>(target: T, source1: S1, source2: S2, source3: S3): T & S1 & S2 & S3;
-
-// @internal
-export function mixin<T, S1, S2, S3, S4>(target: T, source1: S1, source2: S2, source3: S3, source4: S3): T & S1 & S2 & S3 & S4;
-
-// @public
-export function mixin(target: any, ...sources: any[]): any;
-
 // @public
 export function multipleLoop<StopInfo,ThisValue>(mLoopOpts:{
     loopCall:(this:ThisValue,index:number,stepCount:number,total:number)=>StopInfo,
